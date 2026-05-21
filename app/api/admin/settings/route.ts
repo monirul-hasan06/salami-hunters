@@ -1,0 +1,4 @@
+import { NextResponse } from 'next/server';import { bearer,verifyToken } from '@/lib/auth';import { supabaseAdmin } from '@/lib/supabaseAdmin';
+function admin(req:Request){const p=verifyToken(bearer(req));if(p.role!=='admin')throw new Error('Admin only');}
+export async function GET(req:Request){try{admin(req);const{data}=await supabaseAdmin.from('global_settings').select('*').limit(1).single();return NextResponse.json({settings:data});}catch(e:any){return NextResponse.json({error:e.message},{status:401});}}
+export async function PATCH(req:Request){try{admin(req);const body=await req.json();const{data,error}=await supabaseAdmin.from('global_settings').update({...body,last_updated:new Date().toISOString()}).eq('id',1).select().single();if(error)throw error;return NextResponse.json({settings:data});}catch(e:any){return NextResponse.json({error:e.message},{status:401});}}

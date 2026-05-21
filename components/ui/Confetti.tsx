@@ -1,0 +1,2 @@
+'use client';import ConfettiBase from 'react-confetti';import { useEffect,useState } from 'react';
+export default function Confetti({active}:{active:boolean}){const[s,setS]=useState({w:0,h:0});useEffect(()=>{const f=()=>setS({w:innerWidth,h:innerHeight});f();addEventListener('resize',f);return()=>removeEventListener('resize',f)},[]);return active?<ConfettiBase width={s.w} height={s.h} recycle={false} numberOfPieces={180}/>:null}

@@ -1,0 +1,2 @@
+import { NextResponse } from 'next/server';import { bearer,verifyToken } from '@/lib/auth';import { getRemainingAllowance } from '@/lib/getRemainingAllowance';
+export async function POST(req:Request){try{const{userId}=verifyToken(bearer(req));const allowance=await getRemainingAllowance(userId);return NextResponse.json({sessionStarted:true,remaining:allowance.remaining,coinValues:[0.25,0.5,1]});}catch{return NextResponse.json({error:'Unauthorized'},{status:401});}}

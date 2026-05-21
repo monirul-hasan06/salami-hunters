@@ -1,0 +1,2 @@
+import Button from './Button';import Card from './Card';
+export default function Modal({open,title,children,onClose}:{open:boolean;title:string;children:React.ReactNode;onClose:()=>void}){if(!open)return null;return <div className="fixed inset-0 z-50 grid place-items-center bg-black/70 p-4"><Card className="max-w-md"><h2 className="font-serif text-2xl text-eid-gold">{title}</h2><div className="mt-4">{children}</div><Button className="mt-6" onClick={onClose}>Close</Button></Card></div>}

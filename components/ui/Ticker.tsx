@@ -1,0 +1,2 @@
+const messages=['Transparent rewards enabled','Daily salami cap is shown before play','Play quiz, dino, and wheel fairly','Admin can adjust caps openly'];
+export default function Ticker(){return <div className="relative z-20 overflow-hidden border-b border-white/10 bg-black/60 py-2 text-sm text-eid-gold"><div className="animate-pulse whitespace-nowrap text-center">🎉 {messages.join(' • ')}</div></div>}

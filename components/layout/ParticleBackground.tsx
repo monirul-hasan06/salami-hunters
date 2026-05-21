@@ -1,0 +1,1 @@
+export default function ParticleBackground(){return <div className="pointer-events-none fixed inset-0 z-0 opacity-40"><div className="absolute left-10 top-20 text-5xl">🌙</div><div className="absolute right-20 top-40 text-4xl">🏮</div><div className="absolute bottom-24 left-1/3 text-3xl">✨</div><div className="absolute bottom-36 right-1/4 text-3xl">🪙</div></div>}

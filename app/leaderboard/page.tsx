@@ -1,0 +1,2 @@
+import Card from '@/components/ui/Card';
+export default function Leaderboard(){const rows=['Tuba','Arafat','Sakib','Nadia','Rafiq'];return <Card><h1 className="font-serif text-4xl text-eid-gold">Leaderboard</h1><p className="mt-2 text-white/60">Seed demo data. Real/fake status is clearly stored in database.</p><div className="mt-6 space-y-3">{rows.map((n,i)=><div className="flex justify-between rounded-xl bg-white/5 p-3" key={n}><span>{i+1}. {n}</span><span>{[760,340,270,215,190][i]} BDT</span></div>)}</div></Card>}

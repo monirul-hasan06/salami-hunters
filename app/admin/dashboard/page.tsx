@@ -1,0 +1,2 @@
+import Card from '@/components/ui/Card';import PlayerTable from '@/components/admin/PlayerTable';import GameControls from '@/components/admin/GameControls';import StatsChart from '@/components/admin/StatsChart';
+export default function AdminDashboard(){return <div><h1 className="font-serif text-5xl text-eid-gold">Admin Dashboard</h1><div className="mt-8 grid gap-5"><Card><StatsChart/></Card><Card><GameControls/></Card><Card><PlayerTable/></Card></div></div>}

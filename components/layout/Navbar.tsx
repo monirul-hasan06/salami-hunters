@@ -1,0 +1,2 @@
+import Link from 'next/link';
+export default function Navbar(){return <nav className="relative z-20 mx-auto flex max-w-6xl items-center justify-between px-4 py-5"><Link href="/" className="font-serif text-3xl font-black text-eid-gold">☾ Salami Hunters</Link><div className="flex gap-4 text-sm"><Link href="/dashboard">Dashboard</Link><Link href="/leaderboard">Leaderboard</Link><Link href="/login">Login</Link></div></nav>}

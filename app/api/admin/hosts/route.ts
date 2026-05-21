@@ -1,0 +1,2 @@
+import { NextResponse } from 'next/server';import { bearer,verifyToken } from '@/lib/auth';import { supabaseAdmin } from '@/lib/supabaseAdmin';
+export async function GET(req:Request){try{const p=verifyToken(bearer(req));if(p.role!=='admin')throw new Error('Admin only');const{data,error}=await supabaseAdmin.from('referral_hosts').select('*').order('created_at',{ascending:false});if(error)throw error;return NextResponse.json({hosts:data});}catch(e:any){return NextResponse.json({error:e.message},{status:401});}}
